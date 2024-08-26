@@ -10,26 +10,26 @@ Documentation for `hashicorp/setup-terraform` is located here: https://github.co
 
 ## To use this workflow, you will need to complete the following setup steps.
 
-terraform {
-    backend "remote" {
+    terraform {
+        backend "remote" {
 
-        # The name of your Terraform Cloud organization.
-        organization = "example-organization"
+            # The name of your Terraform Cloud organization.
+            organization = "example-organization"
 
-    # The name of the Terraform Cloud workspace to store Terraform state files in.
-    workspaces {
-        name = "example-workspace"
+        # The name of the Terraform Cloud workspace to store Terraform state files in.
+        workspaces {
+            name = "example-workspace"
+            }
         }
     }
-}
 
 # An example resource that does nothing.
 
-resource "null_resource" "example" {
-    triggers = {
-        value = "A example resource that does nothing!"
+    resource "null_resource" "example" {
+        triggers = {
+            value = "A example resource that does nothing!"
+        }
     }
-}
 
 ## Generate a Terraform Cloud user API token and store it as a GitHub secret (e.g. TF_API_TOKEN) on this repository.
 
